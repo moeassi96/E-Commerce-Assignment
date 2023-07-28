@@ -1,0 +1,193 @@
+
+body{
+    font-family: 'Roboto', sans-serif;
+}
+
+a{
+    text-decoration: none;
+    color:inherit
+}
+
+.dark-blue{
+    color: #1E212B;
+}
+
+.light-green{
+    color: #94A187;
+}
+
+.light-purple{
+    color: #8D6B94;
+}
+
+.off-white{
+    color: #FFDBDA;
+}
+
+.bg-dark-blue{
+   background-color: #1E212B;
+}
+
+.bg-off-white{
+    background-color: #FFDBDA;
+ }
+
+
+ .fs-8{
+    font-size: 8px;
+ }
+ .fs-16{
+    font-size: 16px;
+ }
+ .fs-24{
+    font-size: 24px;
+ }
+ .fs-32{
+    font-size: 32px;
+ }
+ .fs-40{
+    font-size: 40px;
+ }
+ .fs-48{
+    font-size: 48px;
+ }
+ .fw-100{
+    font-weight: 100;
+ }
+ .fw-200{
+    font-weight: 200;
+ }
+ .fw-300{
+    font-weight: 300;
+ }
+ .fw-400{
+    font-weight: 400;
+ }
+ .fw-500{
+    font-weight: 500;
+ }
+ .fw-600{
+    font-weight: 600;
+ }
+ .fw-700{
+    font-weight: 700;
+ }
+ .fw-800{
+    font-weight: 800;
+ }
+ .fw-900{
+    font-weight: 900;
+ }
+ 
+/* Flex */
+.flex {
+    display: flex;
+  }
+.flex-col {
+    flex-direction: column;
+  }
+.justify-center {
+    justify-content: center;
+  }
+.justify-start {
+    justify-content: start;
+  }
+.justify-end {
+    justify-content: end;
+  }
+.justify-between {
+    justify-content: space-between;
+  }
+.items-center {
+    align-items: center;
+  }
+.items-start {
+    align-items: start;
+  }
+.items-end {
+    align-items: end;
+  }
+.grow {
+    flex-grow: 1;
+  }
+  
+.justify-self-end {
+    justify-self: end;
+  }
+.justify-self-center {
+    justify-self: center;
+  }
+.justify-self-start {
+    justify-self: start;
+  }
+.align-self-end {
+    align-self: end;
+  }
+.align-self-start {
+    align-self: start;
+  }
+.align-self-center {
+    align-self: center;
+  }
+
+.gap-5 {
+    gap: 5px;
+  }
+.gap-10 {
+    gap: 10px;
+  }
+.gap-15 {
+    gap: 15px;
+  }
+.gap-20 {
+    gap: 20px;
+  }
+.gap-25 {
+    gap: 25px;
+  }
+.gap-30 {
+    gap: 30px;
+  }
+  
+  /* padding */
+  .padding-lg {
+    padding: 16px 24px;
+  }
+  .padding-left-lg {
+    padding: 0px 24px;
+  }
+  .padding-md {
+    padding: 16px;
+  }
+  .padding-bot-md {
+    padding: 0px 0px 16px;
+  }
+  .padding-top-md {
+    padding: 16px 0px 0px;
+  }
+  .padding-r-md {
+    padding: 0px 16px 0px 0px;
+  }
+  .padding-sm {
+    padding: 12px;
+  }
+  .padding-8px {
+    padding: 8px;
+  }
+  .padding-v-8px {
+    padding: 8px 0px;
+  }
+  .br-50 {
+    border-radius: 50%;
+  }
+  .hide {
+    display: none !important;
+  }
+  .show {
+    display: block !important;
+  }
+  
+  
+
+
+

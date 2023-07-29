@@ -1,10 +1,18 @@
 
+*,*::before,*::after{
+    Margin:0;
+    Padding:0;
+    Box-sizing:border-box
+    }
 body{
     font-family: 'Roboto', sans-serif;
+    margin: 0px;
+    color: #1E212B;
 }
 
 a{
     text-decoration: none;
+    color: #1E212B;
     color:inherit
 }
 
@@ -21,7 +29,7 @@ a{
 }
 
 .off-white{
-    color: #FFDBDA;
+    color: #d9d9d9;
 }
 
 .bg-dark-blue{
@@ -29,7 +37,7 @@ a{
 }
 
 .bg-off-white{
-    background-color: #FFDBDA;
+    background-color: #d9d9d9;
  }
 
 
@@ -148,7 +156,22 @@ a{
 .gap-30 {
     gap: 30px;
   }
+  .gap-40 {
+    gap: 40px;
+  }
+  .gap-50 {
+    gap: 50px;
+  }
+  .gap-60 {
+    gap: 60px;
+  }
   
+  .mt-50{
+    margin-top: 50px;
+  }
+  .mb-10{
+    margin-bottom: 10px;
+  }
   /* padding */
   .padding-lg {
     padding: 16px 24px;

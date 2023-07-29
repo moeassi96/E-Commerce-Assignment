@@ -1,0 +1,27 @@
+
+.navbar{
+    background-color: #d9d9d9;
+    height: 100px;
+}
+.navbar > div {
+    width: 33.33%;
+}
+
+.navbar-header{
+    padding-left: 100px;
+}
+.navbar-header > img{
+    width: 100px;
+    height: 60px;
+}
+.navbar-cart >a> img{
+    width: 45px;
+}
+.signIn-btn{
+    cursor: pointer;
+    display: none;
+}
+.signOut-btn{
+    cursor: pointer;
+    display : none;
+}

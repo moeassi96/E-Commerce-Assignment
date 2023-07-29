@@ -150,7 +150,21 @@ padding-bottom: 20px;
     background-color: #d9d9d9;
     border-radius: 10px;
     justify-content: space-around;
+    position: relative;
 }
+
+.product-description {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #fff;
+    padding: 10px;
+    display: none;
+    opacity: 90%;
+    z-index: 1;
+  }
+
 .item-card > img{
     width: 100px;
 }

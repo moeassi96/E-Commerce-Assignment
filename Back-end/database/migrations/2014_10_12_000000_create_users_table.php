@@ -17,9 +17,49 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->rememberToken();
+            $table->string('role');
             $table->timestamps();
         });
+
+        Schema::create('categories', function (Blueprint $table) {
+            $table->id();
+            $table->string('name')->unique();
+        });
+
+        Schema::create('products', function (Blueprint $table) {
+            $table->id(); 
+            $table->string('name');
+            $table->text('description');
+            $table->decimal('price', 5, 2);
+            $table->string('image');
+            $table->unsignedBigInteger('category_id'); 
+           
+    
+            $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
+        });
+
+        Schema::create('carts', function (Blueprint $table) {
+            $table->id();
+            $table->unsignedBigInteger('user_id'); 
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+        });
+
+        Schema::create('cart_items', function (Blueprint $table) {
+            $table->id(); 
+            $table->unsignedBigInteger('cart_id'); 
+            $table->unsignedBigInteger('product_id'); 
+            $table->unsignedBigInteger('quantity'); 
+            $table->foreign('cart_id')->references('id')->on('carts')->onDelete('cascade');
+            $table->foreign('product_id')->references('id')->on('products')->onDelete('cascade');
+        });
+
+
+
+
+
+
+
+
     }
 
     /**

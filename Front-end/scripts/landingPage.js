@@ -4,8 +4,88 @@ window.addEventListener("load",()=>{
        const user = JSON.parse(localStorage.getItem("user"));
        const authorization = JSON.parse(localStorage.getItem("authorization"));
        const cart_id = localStorage.getItem("cart_id");
-       
       console.log(user,authorization,cart_id)
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      const itemCards = document.querySelectorAll('.item-card');
+
+      // Attach hover event listeners to each item card
+      itemCards.forEach((card) => {
+        card.addEventListener('mouseenter', () => showDescription(card));
+        card.addEventListener('mouseleave', () => hideDescription(card));
+      });
+      console.log(itemCards)
+      
+      // Function to show the product description popup on hover
+      function showDescription(card) {
+        const description = card.querySelector('.product-description');
+        description.style.display = 'block';
+      }
+      
+      // Function to hide the product description popup on hover out
+      function hideDescription(card) {
+        const description = card.querySelector('.product-description');
+        description.style.display = 'none';
+      }
+      
+      
+      
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
        
     // hiding Sign in btn when userid is available and adding eventlistener on sign up btn.
      const signIn_btn = document.getElementById("signIn-btn")
@@ -49,17 +129,6 @@ window.addEventListener("load",()=>{
 
 
      const card_container = document.getElementById("category-items")
-
-     
-
-
-
-
-
-
-
-
-
 
 
 })

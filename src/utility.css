@@ -115,6 +115,9 @@ a{
 .items-end {
     align-items: end;
   }
+.wrap{
+  flex-wrap: wrap;
+}
 .grow {
     flex-grow: 1;
   }

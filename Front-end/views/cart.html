@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../src/utility.css">
     <link rel="stylesheet" href="../src/navbar.css">
+    <link rel="stylesheet" href="../src/cart.css">
     <link rel="stylesheet" href="../src/landingPage.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -27,6 +28,110 @@
         <div class="navbar-cart flex items-center justify-center">
             <a  class="flex items-center gap-10" href=""><img src="../assets/images/Shopping cart.png" alt=""> My cart</a>
         </div>
+    </div>
+
+    <div class="main-container flex flex-col items-center mt-50">
+
+        <div class="cart-title">
+            My Shopping Cart
+        </div>
+
+        <div class="cart-table flex flex-col mt-20">
+            <div class="table-titles flex items-center">
+                <div class="product">
+                    Product
+                </div>
+                <div class="price">
+                    Price
+                </div>
+                <div class="quantity">
+                    Quantity
+                </div>
+                <div class="total">
+                    Total
+                </div>
+            </div>
+            <div id="cart-products" class="cart-products flex flex-col mt-20 gap-20 mb-20">
+                <div class="cart-item flex items-center">
+                    <div class="cart-product flex gap-20 items-center">
+                        <div class="cart-image">
+                            <img src="../assets/images/razor 1.png" alt="">
+                        </div>
+                        <div class="cart-name">
+                            Razor1
+                        </div>
+                    </div>
+                    <div class="cart-price">
+                        <p>$<span>19.00</span></p>
+                    </div>
+                    <div class="cart-quantity">
+                        15
+                    </div>
+                    <div class="cart-total">
+                        <p>$<span>250.00</span></p>
+                    </div>
+
+                </div>
+                <div class="cart-item flex items-center">
+                    <div class="cart-product flex gap-20 items-center">
+                        <div class="cart-image">
+                            <img src="../assets/images/razor 1.png" alt="">
+                        </div>
+                        <div class="cart-name">
+                            Razor1
+                        </div>
+                    </div>
+                    <div class="cart-price">
+                        <p>$<span>19.00</span></p>
+                    </div>
+                    <div class="cart-quantity">
+                        15
+                    </div>
+                    <div class="cart-total">
+                        <p>$<span>250.00</span></p>
+                    </div>
+
+                </div>
+                <div class="cart-item flex items-center">
+                    <div class="cart-product flex gap-20 items-center">
+                        <div class="cart-image">
+                            <img src="../assets/images/razor 1.png" alt="">
+                        </div>
+                        <div class="cart-name">
+                            Razor1
+                        </div>
+                    </div>
+                    <div class="cart-price">
+                        <p>$<span>19.00</span></p>
+                    </div>
+                    <div class="cart-quantity">
+                        15
+                    </div>
+                    <div class="cart-total">
+                        <p>$<span>250.00</span></p>
+                    </div>
+
+                </div>
+            </div>
+            <div class="cart-grandtotal flex items-center">
+                <div class="product">
+                    
+                </div>
+                <div class="price">
+                    Sub-total
+                </div>
+                <div class="quantity">
+                    <p>$<span>19.00</span></p>
+                </div>
+                <div class="total">
+                    <div id="checkoutBtn" class="checkoutBtn">
+                        Checkout
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
     </div>
 
 

@@ -2,6 +2,7 @@
 
 .dashboard-container{
     background-color: #94A187;
+    padding: 50px 0px;
 }
 
 .dashboard-title{
@@ -119,7 +120,7 @@
 }
 
 .add-btn{
-    padding: 10px 15px;
+    padding: 10px 30px;
     background-color: #50c05c;
     border-radius: 5px;
     cursor: pointer;

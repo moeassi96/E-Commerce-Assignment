@@ -70,4 +70,18 @@ class CartItemController extends Controller
             'message' => 'Cart item not found.',
         ]);
     }
+
+    function deleteMyCartItems($cart_id)
+    {
+
+        $deletedItems = CartItem::where('cart_id', $cart_id)->delete();
+
+        return response()->json([
+            'message' => 'My cart is emptied',
+        ]);
+    }
+
+
+
+    
 }

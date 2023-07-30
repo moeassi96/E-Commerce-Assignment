@@ -6,65 +6,56 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    /**
-     * Run the migrations.
-     */
-    public function up(): void
+
+    public function up()
     {
+       
         Schema::create('users', function (Blueprint $table) {
-            $table->id();
-            $table->string('name');
+            $table->increments('id');
             $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
+            $table->string('name');
             $table->string('password');
+            $table->timestamp('email_verified_at')->nullable();
             $table->string('role');
             $table->timestamps();
         });
 
-        Schema::create('categories', function (Blueprint $table) {
-            $table->id();
-            $table->string('name')->unique();
-        });
-
+       
         Schema::create('products', function (Blueprint $table) {
-            $table->id(); 
+            $table->increments('id');
             $table->string('name');
             $table->text('description');
             $table->decimal('price', 5, 2);
-            $table->string('image');
-            $table->unsignedBigInteger('category_id'); 
-           
+            $table->unsignedInteger('category_id');
+            $table->mediumText('image');
+
+        });
+
     
-            $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
+        Schema::create('categories', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('name');
         });
 
+     
         Schema::create('carts', function (Blueprint $table) {
-            $table->id();
-            $table->unsignedBigInteger('user_id'); 
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->increments('id');
+            $table->unsignedInteger('user_id');
+            $table->timestamps();
+
+        
         });
 
+  
         Schema::create('cart_items', function (Blueprint $table) {
-            $table->id(); 
-            $table->unsignedBigInteger('cart_id'); 
-            $table->unsignedBigInteger('product_id'); 
-            $table->unsignedBigInteger('quantity'); 
-            $table->foreign('cart_id')->references('id')->on('carts')->onDelete('cascade');
-            $table->foreign('product_id')->references('id')->on('products')->onDelete('cascade');
+            $table->increments('id');
+            $table->unsignedInteger('cart_id');
+            $table->unsignedInteger('product_id');
+            $table->integer('quantity')->default(1);
+            $table->unique(['cart_id', 'product_id']);
         });
-
-
-
-
-
-
-
-
     }
 
-    /**
-     * Reverse the migrations.
-     */
     public function down(): void
     {
         Schema::dropIfExists('users');

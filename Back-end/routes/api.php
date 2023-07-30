@@ -5,6 +5,9 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\API\AuthController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\CartItemController;
+
+
 
 Route::controller(AuthController::class)->group(function () {
     Route::post('login', 'login');
@@ -16,6 +19,10 @@ Route::controller(AuthController::class)->group(function () {
 
 Route::post('/add-cart/{user_id}', [CartController::class, 'addCart']);
 Route::get('/get-cart-id/{user_id}', [CartController::class, 'getCartId']);
+
+
+Route::post('/add-to-cart', [CartItemController::class, 'addItemToCart']);
+
 
 Route::get('/getallproducts', [ProductController::class, 'allProducts']);
 

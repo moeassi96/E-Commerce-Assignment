@@ -21,13 +21,14 @@ window.addEventListener("load", async () => {
                                 <div class="product-description">
                                   ${product.description}
                               </div>
-                            <div class="add">
+                            <div class="add" data-product-id="${product.id}">
                               Add to cart
                             </div>
                           </div>
                        `;
 
     document.getElementById("category-items").innerHTML += productCard;
+    addToCart()
     hoverDescription()
   });
 
@@ -61,12 +62,13 @@ window.addEventListener("load", async () => {
                                   <div class="product-description">
                                     ${product.description}
                                 </div>
-                              <div class="add">
+                              <div class="add" data-product-id="${product.id}">
                                 Add to cart
                               </div>
                             </div>
                          `;
       document.getElementById("category-items").innerHTML += productCard;
+      addToCart()
       })
       hoverDescription()
   })
@@ -95,16 +97,26 @@ window.addEventListener("load", async () => {
                                   <div class="product-description">
                                     ${product.description}
                                 </div>
-                              <div class="add">
+                              <div class="add" data-product-id="${product.id}">
                                 Add to cart
                               </div>
                             </div>
                          `;
       document.getElementById("category-items").innerHTML += productCard;
+
+      
+      
+    // Get the "Add to cart" buttons and add event listeners
+    
+    
+    addToCart()
+
+
       }
     });
     hoverDescription()
   })
+
 
   creamBtn.addEventListener("click",()=>{
 
@@ -131,12 +143,13 @@ window.addEventListener("load", async () => {
                                   <div class="product-description">
                                     ${product.description}
                                 </div>
-                              <div class="add">
+                              <div class="add" data-product-id="${product.id}">
                                 Add to cart
                               </div>
                             </div>
                          `;
       document.getElementById("category-items").innerHTML += productCard;
+      addToCart()
       }
     });
     hoverDescription()
@@ -166,43 +179,20 @@ window.addEventListener("load", async () => {
                                   <div class="product-description">
                                     ${product.description}
                                 </div>
-                              <div class="add">
+                              <div class="add" data-product-id="${product.id}">
                                 Add to cart
                               </div>
                             </div>
                          `;
       document.getElementById("category-items").innerHTML += productCard;
+      
+      addToCart()
       }})
 
       hoverDescription()
     
   })
 
-
-
-  function hoverDescription (){
-  // hover description
-  const itemCards = document.querySelectorAll(".item-card");
-  
-  itemCards.forEach((card) => {
-    card.addEventListener("mouseenter", () => showDescription(card));
-    card.addEventListener("mouseleave", () => hideDescription(card));
-  });
- 
-
-  
-  function showDescription(card) {
-    const description = card.querySelector(".product-description");
-    description.style.display = "block";
-  }
-
- 
-  function hideDescription(card) {
-    const description = card.querySelector(".product-description");
-    description.style.display = "none";
-  }
-
-}
   //
 
 
@@ -241,4 +231,61 @@ window.addEventListener("load", async () => {
   });
   //
  
+
+
+
+
+
+  function hoverDescription (){
+    // hover description
+    const itemCards = document.querySelectorAll(".item-card");
+    
+    itemCards.forEach((card) => {
+      card.addEventListener("mouseenter", () => showDescription(card));
+      card.addEventListener("mouseleave", () => hideDescription(card));
+    });
+   
+  
+    
+    function showDescription(card) {
+      const description = card.querySelector(".product-description");
+      description.style.display = "block";
+    }
+  
+   
+    function hideDescription(card) {
+      const description = card.querySelector(".product-description");
+      description.style.display = "none";
+    }
+  
+  }
+  
+  
+  function addToCart(){
+    const addtocartButtons = document.querySelectorAll(".add");
+    addtocartButtons.forEach((button) => {
+  
+      button.addEventListener("click", async() => {
+        const product_id = button.dataset.productId;
+       
+        const addtocartresponse = await fetch("http://127.0.0.1:8000/api/add-to-cart", {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ cart_id, product_id }),
+              });
+  
+    
+            const data = await addtocartresponse.json()
+            console.log(data.message)
+  
+  
+      });
+    });
+  }
 });
+
+
+
+

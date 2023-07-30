@@ -2,13 +2,15 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\CartItem;
+use App\Models\Product;
 use Illuminate\Database\QueryException;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class CartItemController extends Controller
 {
-    public function addItemToCart(Request $request)
+    function addItemToCart(Request $request)
     {
         try {
             // Assuming this code is inside a controller method that receives a $request object
@@ -26,6 +28,26 @@ class CartItemController extends Controller
             return response()->json([
                 'message' => 'Error adding item to cart.',
                 'error' => $error->getMessage(), 
+            ]);
+        }
+    }
+
+    function getCartItems($cart_id)
+    {
+        try {
+            $cartItems = DB::table('cart_items')
+            ->join('products', 'cart_items.product_id', '=', 'products.id')
+            ->select('cart_items.id', 'cart_items.cart_id', 'cart_items.product_id', 'cart_items.quantity', 'products.*')
+            ->where('cart_items.cart_id', $cart_id)
+            ->get();
+
+            return response()->json([
+                'cart_items' => $cartItems,
+            ]);
+        } catch (Exception $e) {
+            return response()->json([
+                'message' => 'Error fetching cart items.',
+                'error' => $e->getMessage(),
             ]);
         }
     }

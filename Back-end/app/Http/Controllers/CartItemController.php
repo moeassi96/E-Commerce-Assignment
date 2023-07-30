@@ -51,4 +51,23 @@ class CartItemController extends Controller
             ]);
         }
     }
+
+    function deleteCartItem($cart_id, $product_id)
+    {
+
+        $cartItem = CartItem::where('cart_id', $cart_id)->where('product_id', $product_id)->first();
+
+        
+        if ($cartItem) {
+            $cartItem->delete();
+
+            return response()->json([
+                'message' => 'Cart item deleted successfully.',
+            ]);
+        }
+
+        return response()->json([
+            'message' => 'Cart item not found.',
+        ]);
+    }
 }

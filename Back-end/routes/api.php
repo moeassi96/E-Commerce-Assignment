@@ -23,8 +23,9 @@ Route::get('/get-cart-id/{user_id}', [CartController::class, 'getCartId']);
 
 
 Route::post('/add-to-cart', [CartItemController::class, 'addItemToCart']);
-
 Route::get('/cart-items/{cart_id}', [CartItemController::class, 'getCartItems']);
+Route::delete('/cart-items/{cart_id}/{product_id}', [CartItemController::class, 'deleteCartItem']);
+
 
 
 Route::get('/getallproducts', [ProductController::class, 'allProducts']);

@@ -4,7 +4,7 @@ window.addEventListener("load",async()=>{
     const cart_id = localStorage.getItem("cart_id");
     console.log(user, authorization, cart_id);
 
-
+    
 
     const itemsres = await fetch(`http://127.0.0.1:8000/api/cart-items/${cart_id}`, {
     method: "GET",
@@ -46,6 +46,9 @@ window.addEventListener("load",async()=>{
       </div>
       <div class="cart-total">
           <p>$<span id="price-${item.product_id}">${total}</span></p>
+      </div>
+      <div class="cart-actions">
+        <button class="remove-btn" data-product-id="${item.product_id}">Remove</button>
       </div>
 
   </div>`
@@ -93,6 +96,27 @@ window.addEventListener("load",async()=>{
 
     const grandTotalElement = document.querySelector(".cart-grandtotal .quantity span");
     grandTotalElement.textContent = grandTotal.toFixed(2);
+
+
+    
+    const removeButtons = document.querySelectorAll(".remove-btn");
+    removeButtons.forEach((button) => {
+        button.addEventListener("click",async () => {
+            const productId = button.dataset.productId;
+            
+            const deleteres = await fetch(`http://127.0.0.1:8000/api/cart-items/${cart_id}/${productId}`,{
+
+            method: "DELETE",
+
+            })
+
+            const deleteMessage = await deleteres.json()
+            console.log(deleteMessage)
+            window.location.href = ""
+        });
+    });
+
+    
     
 
 

@@ -6,6 +6,53 @@ window.addEventListener("load",async()=>{
     
     console.log(user, authorization);
 
+    const productres = await fetch(`http://127.0.0.1:8000/api/getallproducts-cat`, {
+    method: "GET",
+  });
+
+  const products = await productres.json();
+
+  products.forEach((product) => {
+    const productCard = `
+                        <div id = "product" class="product flex items-center">
+                            <div class="item-img"> <img src="${product.image}" alt=""></div>
+                            <div class="item-name">${product.name}</div>
+                            <div>$ <span class="item-price">${product.price}</span></div>
+                            <div><p class="item-description">${product.description}</p></div>
+                            <div class="item-category">${product.category_name}</div>
+                            <div class="flex flex-col gap-10 items-center">
+                                <div  id="edit-btn" class="edit-btn">Edit</div>
+                                <div data-product-id="${product.id}" id="remove-btn" class="remove-btn">Remove</div>
+                            </div>
+                        </div>
+                       `;
+
+    document.getElementById("my-products").innerHTML += productCard;
+
+    //
+    const removeBtns = document.querySelectorAll(".remove-btn");
+    removeBtns.forEach((button) => {
+  
+      button.addEventListener("click", async() => {
+        const product_id = button.dataset.productId;
+       
+        const deleteres = await fetch(`http://127.0.0.1:8000/api/deleteproduct/${product_id}`, {
+              method: "DELETE",
+          });
+
+          const deleteMessage = await deleteres.json();
+          console.log(deleteMessage);
+          window.location.href = "dashboard.html"
+  
+  
+      });
+    });
+
+    //
+    
+  
+  });
+
 
 
 

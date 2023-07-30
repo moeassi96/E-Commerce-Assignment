@@ -31,6 +31,10 @@ Route::delete('/reset-cart-items/{cart_id}', [CartItemController::class, 'delete
 Route::get('/getallproducts', [ProductController::class, 'allProducts']);
 Route::get('/getallproducts-cat', [ProductController::class, 'allProductsWithCategory']);
 Route::delete('/deleteproduct/{product_id}', [ProductController::class, 'deleteProduct']);
+Route::post('/addProduct', [ProductController::class, 'addProduct']);
+
+
+
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();

@@ -276,10 +276,8 @@ window.addEventListener("load", async () => {
                 body: JSON.stringify({ cart_id, product_id }),
               });
   
-    
             const data = await addtocartresponse.json()
-            console.log(data.message)
-  
+            
   
       });
     });

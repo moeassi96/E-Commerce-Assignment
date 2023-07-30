@@ -56,6 +56,54 @@ window.addEventListener("load",async()=>{
 
 
 
+  const addBtn = document.getElementById("add-btn")
+
+  addBtn.addEventListener("click",async()=>{
+
+    const file_input = document.getElementById('img-input').files[0];
+    const name_input = document.getElementById("name-input")
+    const price_input = document.getElementById("price-input")
+    const description_input = document.getElementById("description-input")
+    const category_input = document.getElementById('category-select');
+    let base64String;
+    const fileReader = new FileReader();
+
+      fileReader.onload = async function(event) {
+        base64String = event.target.result;
+        
+
+      const productData = {
+        name: name_input.value,
+        description: description_input.value,
+        price: price_input.value,
+        image: base64String,
+        category_name: category_input.value,
+      };
+      console.log(productData)
+
+      const addres = await fetch("http://127.0.0.1:8000/api/addProduct",{
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(productData),
+      })
+      window.location.href = "dashboard.html"
+      const add_message = await addres.json();
+
+      window.location.href = "dashboard.html"
+
+    };
+
+    fileReader.readAsDataURL(file_input);
+    
+
+
+  })
+
+
+
+
 
 
 

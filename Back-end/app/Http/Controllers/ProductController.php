@@ -35,5 +35,36 @@ class ProductController extends Controller
         } catch (\Exception $e) {
             return response()->json(['message' => 'Product not found']);
         }
+
+    }
+
+    function addProduct(Request $request){
+
+        $name = $request->input('name');
+        $description = $request->input('description');
+        $image = $request->input('image');
+        $price = $request->input('price');
+        $categoryName = $request->input('category_name');
+
+        $categoryId = DB::table('categories')
+            ->where('name', $categoryName)
+            ->value('id');
+
+        $toadd = [
+            'name' => $name,
+            'description' => $description,
+            'image' => $image,
+            'price' => $price,
+            'category_id' => $categoryId,
+        ];
+    
+        DB::table('products')->insert($toadd);
+    
+        if ($productId) {
+            return response()->json(['message' => 'Product added successfully', 'product_id' => $productId]);
+        } else {
+            return response()->json(['message' => 'Failed to add product']);
+        }
+
     }
 }

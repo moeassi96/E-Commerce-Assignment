@@ -57,6 +57,9 @@ window.addEventListener("load",()=>{
                     window.location.href = "views/LandingPage.html";
 
                 }
+                else{
+                    window.location.href = "views/dashboard.html";
+                }
             }
 
         }catch(error){

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../src/utility.css">
+    <link rel="stylesheet" href="../src/navbar.css">
+    <link rel="stylesheet" href="../src/landingPage.css">
+    <link rel="stylesheet" href="../src/dashboard.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Redressed&display=swap" rel="stylesheet">
+    <title>Dashboard</title>
+</head>
+<body>
+    <div class="navbar flex">
+        <div class="navbar-header flex items-center">
+            <img src="../assets/images/logo.png" alt="">
+        </div>
+        <div class="navbar-header-list flex items-center justify-center gap-60">
+            <a class="fw-700 fs-16" href="">Products</a>
+            <a class="fw-700 fs-16" href="">About</a>
+            <a id="signIn-btn" class="signIn-btn fw-700 fs-16">Sign In</a>
+            <a id="signOut-btn" class="signOut-btn fw-700 fs-16">Sign Out</a>
+        </div>
+        <div class="navbar-cart flex items-center justify-center">
+            <a  class="flex items-center gap-10" href="cart.html"><img src="../assets/images/Shopping cart.png" alt=""> My cart</a>
+        </div>
+    </div>
+    <div class="dashboard-container flex flex-col items-center">
+        <div class="dashboard-title">
+            Dashboard
+        </div>
+
+        <div class="dashboard-table flex flex-col mt-20">
+            <div class="table-titles flex items-center">
+                <div class="Picture">
+                    Picture
+                </div>
+                <div class="Name">
+                    Name
+                </div>
+                <div class="Price">
+                    Price
+                </div>
+                <div class="Description">
+                    Description
+                </div>
+                <div class="Category">
+                    Category
+                </div>
+                <div>
+
+                </div>
+            </div>
+            <div id="my-products" class="my-products flex flex-col">
+                <div id = "product" class="product flex items-center">
+                    <div class="item-img"> <img src="../assets/images/razor 1.png" alt=""></div>
+                    <div class="item-name">XR-PK</div>
+                    <div>$ <span class="item-price">19.00</span></div>
+                    <div><p class="item-description">razor1razor1razor1razor1razor1</p></div>
+                    <div class="item-category">Razors</div>
+                    <div class="flex flex-col gap-10 items-center">
+                        <div id="edit-btn" class="edit-btn">Edit</div>
+                        <div id="remove-btn" class="remove-btn">Remove</div>
+                    </div>
+                </div>
+                <div id = "product" class="product flex items-center">
+                    <div class="item-img"> <img src="../assets/images/shave brush 1.png" alt=""></div>
+                    <div class="item-name">XR-PK</div>
+                    <div>$ <span class="item-price">19.00</span></div>
+                    <div><p class="item-description">razor1razor1razor1razor1razor1</p></div>
+                    <div class="item-category">Razors</div>
+                    <div class="flex flex-col gap-10 items-center">
+                        <div id="edit-btn" class="edit-btn">Edit</div>
+                        <div id="remove-btn" class="remove-btn">Remove</div>
+                    </div>
+                </div>
+                <div id = "product" class="product flex items-center">
+                    <div class="item-img"> <img src="../assets/images/shave cream 2.png" alt=""></div>
+                    <div class="item-name">XR-PK</div>
+                    <div>$ <span class="item-price">19.00</span></div>
+                    <div><p class="item-description">razor1razor1razor1razor1razor1</p></div>
+                    <div class="item-category">Razors</div>
+                    <div class="flex flex-col gap-10 items-center">
+                        <div id="edit-btn" class="edit-btn">Edit</div>
+                        <div id="remove-btn" class="remove-btn">Remove</div>
+                    </div>
+                </div>
+                
+            </div>
+
+            <div class="new-item flex">
+                <div><input id="img-input" type="file" id="imageInput" name="image" accept="image/*"></div>
+                <div><input id="name-input" class="name-input" type="text"></div>
+                <div><input id="price-input" class="price-input" type="text"></div>
+                <div><input id="description-input" class="description-input" type="text"></div>
+                <div><form>
+                    <label for="categoryselect">Category:</label>
+                    <select id="category-select" name="cat">
+                        <option value="razor">Razor</option>
+                        <option value="cream">Cream</option>
+                        <option value="brush">Brush</option>
+                    </select>
+                </form></div>
+                <div class="flex justify-center items-center">
+                    <div id="add-btn" class="add-btn"> confirm</div>
+                </div>
+                
+            </div>
+
+        </div>
+    </div>
+    
+
+    <div style="margin-top: 0px;" class="footer flex items-center">
+        <div class="footer-logo flex items-center justify-center">
+            <img src="../assets/images/logo big.png" alt="">
+        </div>
+        <div class="footer-list flex flex-col items-center justify-center gap-20">
+            <a href="">Info</a>
+            <a href="">Contact Us</a>
+            <a href="">About Us</a>
+            <a href="">Key Features</a>
+        </div>
+        <div class="footer-list flex flex-col items-center justify-center gap-20">
+            <a href="">Razors</a>
+            <a href="">Shaving Cream</a>
+            <a href="">Shaving Brush</a>
+            
+        </div>
+
+    </div>
+    <script src="../scripts/dashboard.js"></script>
+</body>
+</html>

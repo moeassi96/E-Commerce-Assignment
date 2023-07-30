@@ -1,0 +1,126 @@
+
+
+.dashboard-container{
+    background-color: #94A187;
+}
+
+.dashboard-title{
+    padding: 15px ;
+    font-size: 24px;
+    font-weight: 
+    400;
+    color: #ffffff;
+    background-color: #94A187;
+    border-radius: 10px;
+    width: 60%;
+    text-align: center;
+}
+
+.dashboard-table{
+    width: 80%;
+}
+
+.table-titles{
+    padding: 20px 0px;
+    font-size: 16px;
+    font-weight: 500;
+    border-bottom: 1px solid;
+}
+
+.table-titles > div {
+    width: 16.66% ;
+    text-align: center;
+}
+
+.Picture{
+
+}
+
+.Name{
+
+}
+
+.Price{
+
+}
+
+.Description{
+    
+}
+
+.Category{
+
+}
+
+.my-products{
+
+}
+
+.product{
+    width: 100%;
+    border-bottom: 1px solid;
+    padding: 20px 0px;
+}
+.product > div{
+    width: 16.666%;
+    text-align: center;
+}
+
+.item-description{
+    word-wrap: break-word;
+}
+
+.item-img >img {
+    height: 50px;
+}
+
+.edit-btn{
+    width: 80px;
+    padding: 5px 10px;
+    background-color: white;
+    border-radius: 5px;
+
+    cursor: pointer;
+}
+.remove-btn{
+    width: 80px;
+    padding: 5px 10px;
+    background-color: rgb(243, 56, 56);
+    border-radius: 5px;
+
+    cursor: pointer;
+}
+
+
+.new-item >div{
+    width: 16.666%;
+    text-align: center;
+    padding: 20px 0px;
+}
+
+.name-input{
+    width: 60%;
+    font-size: 16px;
+    border-radius: 5px;
+    
+    padding: 5px 10px;
+}
+.price-input{
+    width: 60%;
+    font-size: 16px;
+    border-radius: 5px;
+    padding: 5px 10px;
+}
+.description-input{
+    width: 100%;
+    font-size: 16px;
+    border-radius: 5px;
+    padding: 5px 10px;
+}
+
+.add-btn{
+    padding: 10px 15px;
+    background-color: #50c05c;
+    border-radius: 5px;
+    cursor: pointer;
+}

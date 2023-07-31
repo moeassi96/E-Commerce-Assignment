@@ -80,6 +80,30 @@
 
         </div>
     </div>
+
+    <div class="modal" id="myModal">
+        <div class="modal-body">
+            <span class="close-btn" id="closeModalBtn">&times;</span>
+            <h2>Edit</h2>
+            <div class="edit-inputs flex flex-col mt-10">
+                <label for="editImageInput">Image</label>
+                <input type="file" id="editImageInput" accept="image/*">
+                <label for="editNameInput">Name</label>
+                <input type="text" id="editNameInput" required>
+                <label for="editPriceInput">Price</label>
+                <input type="text" id="editPriceInput" required>
+                <label for="editDescriptionInput">Description</label>
+                <textarea id="editDescriptionInput" required></textarea>
+                <label for="editCategoryInput">Category</label>
+                <select id="editCategoryInput">
+                    <option value="razor">razor</option>
+                    <option value="cream">cream</option>
+                    <option value="brush">brush</option>
+                </select>
+            </div>
+            <button id="editConfirmBtn">Confirm</button>
+        </div>
+    </div>
     
 
     <div style="margin-top: 0px;" class="footer flex items-center">

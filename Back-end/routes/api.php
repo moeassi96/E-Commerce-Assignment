@@ -2,12 +2,12 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\API\AuthController;
+
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CartItemController;
 use Illuminate\Support\Facades\DB;
-
+use App\Http\Controllers\API\AuthController;
 
 
 Route::controller(AuthController::class)->group(function () {

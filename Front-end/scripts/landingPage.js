@@ -12,20 +12,20 @@ window.addEventListener("load", async () => {
 
   products.forEach((product) => {
     const productCard = `
-                        <div class="item-card">
-                            <div>
-                              <h3 class="product-name">${product.name}</h3>
-                                <p>$<span>${product.price}</span></p>
+                          <div class="item-card">
+                              <div class="card-header">
+                                <h3 class="product-name">${product.name}</h3>
+                                  <p>$<span>${product.price}</span></p>
+                                  </div>
+                                    <div class =card-img><img src="${product.image}" alt="${product.name}"></div>
+                                  <div class="product-description">
+                                    ${product.description}
                                 </div>
-                                  <img src="${product.image}" alt="${product.name}">
-                                <div class="product-description">
-                                  ${product.description}
+                              <div class="add" data-product-id="${product.id}">
+                                Add to cart
                               </div>
-                            <div class="add" data-product-id="${product.id}">
-                              Add to cart
                             </div>
-                          </div>
-                       `;
+                         `;
 
     document.getElementById("category-items").innerHTML += productCard;
     addToCart()
@@ -54,11 +54,11 @@ window.addEventListener("load", async () => {
       
       const productCard = `
                           <div class="item-card">
-                              <div>
+                              <div class="card-header">
                                 <h3 class="product-name">${product.name}</h3>
                                   <p>$<span>${product.price}</span></p>
                                   </div>
-                                    <img src="${product.image}" alt="${product.name}">
+                                    <div class =card-img><img src="${product.image}" alt="${product.name}"></div>
                                   <div class="product-description">
                                     ${product.description}
                                 </div>
@@ -87,21 +87,21 @@ window.addEventListener("load", async () => {
 
       if(product.category_id === 1){
         
-      const productCard = `
-                          <div class="item-card">
-                              <div>
-                                <h3 class="product-name">${product.name}</h3>
-                                  <p>$<span>${product.price}</span></p>
-                                  </div>
-                                    <img src="${product.image}" alt="${product.name}">
-                                  <div class="product-description">
-                                    ${product.description}
-                                </div>
-                              <div class="add" data-product-id="${product.id}">
-                                Add to cart
-                              </div>
-                            </div>
-                         `;
+        const productCard = `
+        <div class="item-card">
+            <div class="card-header">
+              <h3 class="product-name">${product.name}</h3>
+                <p>$<span>${product.price}</span></p>
+                </div>
+                  <div class =card-img><img src="${product.image}" alt="${product.name}"></div>
+                <div class="product-description">
+                  ${product.description}
+              </div>
+            <div class="add" data-product-id="${product.id}">
+              Add to cart
+            </div>
+          </div>
+       `;
       document.getElementById("category-items").innerHTML += productCard;
 
       
@@ -171,11 +171,11 @@ window.addEventListener("load", async () => {
         
       const productCard = `
                           <div class="item-card">
-                              <div>
+                              <div class="card-header">
                                 <h3 class="product-name">${product.name}</h3>
                                   <p>$<span>${product.price}</span></p>
                                   </div>
-                                    <img src="${product.image}" alt="${product.name}">
+                                    <div class =card-img><img src="${product.image}" alt="${product.name}"></div>
                                   <div class="product-description">
                                     ${product.description}
                                 </div>
@@ -267,6 +267,10 @@ window.addEventListener("load", async () => {
   
       button.addEventListener("click", async() => {
         const product_id = button.dataset.productId;
+
+        button.innerText = "Added to cart"
+        button.style.backgroundColor = "#8D6B94"
+        button.style.cursor = "auto"
        
         const addtocartresponse = await fetch("http://127.0.0.1:8000/api/add-to-cart", {
                 method: 'POST',

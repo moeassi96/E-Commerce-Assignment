@@ -24,11 +24,15 @@ window.addEventListener("load", async () => {
                               <div class="add" data-product-id="${product.id}">
                                 Add to cart
                               </div>
+                              <div class="add-f" data-product-id="${product.id}">
+                                Add to favourites
+                              </div>
                             </div>
                          `;
 
     document.getElementById("category-items").innerHTML += productCard;
     addToCart()
+    addToFavourites()
     hoverDescription()
   });
 
@@ -37,6 +41,7 @@ window.addEventListener("load", async () => {
   razorsBtn = document.getElementById("razors-cat")
   creamBtn = document.getElementById("cream-cat")
   brushBtn = document.getElementById("brush-cat")
+  favoritesBtn = document.getElementById("favorites")
 
 
 
@@ -47,6 +52,7 @@ window.addEventListener("load", async () => {
     allBtn.style.backgroundColor = "#8D6B94";
     creamBtn.style.backgroundColor = "#d9d9d9";
     brushBtn.style.backgroundColor = "#d9d9d9";
+    favoritesBtn.style.backgroundColor = "#d9d9d9";
 
     document.getElementById("category-items").innerHTML = "";
 
@@ -65,10 +71,14 @@ window.addEventListener("load", async () => {
                               <div class="add" data-product-id="${product.id}">
                                 Add to cart
                               </div>
+                              <div class="add-f" data-product-id="${product.id}">
+                                Add to favourites
+                              </div>
                             </div>
                          `;
       document.getElementById("category-items").innerHTML += productCard;
       addToCart()
+      addToFavourites()
       })
       hoverDescription()
   })
@@ -79,6 +89,7 @@ window.addEventListener("load", async () => {
     allBtn.style.backgroundColor = "#d9d9d9";
     creamBtn.style.backgroundColor = "#d9d9d9";
     brushBtn.style.backgroundColor = "#d9d9d9";
+    favoritesBtn.style.backgroundColor = "#d9d9d9";
 
     document.getElementById("category-items").innerHTML = "";
 
@@ -100,6 +111,9 @@ window.addEventListener("load", async () => {
             <div class="add" data-product-id="${product.id}">
               Add to cart
             </div>
+            <div class="add-f" data-product-id="${product.id}">
+                Add to favourites
+            </div>
           </div>
        `;
       document.getElementById("category-items").innerHTML += productCard;
@@ -110,6 +124,7 @@ window.addEventListener("load", async () => {
     
     
     addToCart()
+    addToFavourites()
 
 
       }
@@ -124,6 +139,7 @@ window.addEventListener("load", async () => {
     allBtn.style.backgroundColor = "#d9d9d9";
     creamBtn.style.backgroundColor = "#8D6B94";
     brushBtn.style.backgroundColor = "#d9d9d9";
+    favoritesBtn.style.backgroundColor = "#d9d9d9";
 
 
     document.getElementById("category-items").innerHTML = "";
@@ -139,17 +155,21 @@ window.addEventListener("load", async () => {
                                 <h3 class="product-name">${product.name}</h3>
                                   <p>$<span>${product.price}</span></p>
                                   </div>
-                                    <img src="${product.image}" alt="${product.name}">
+                                  <div class =card-img><img src="${product.image}" alt="${product.name}"></div>
                                   <div class="product-description">
                                     ${product.description}
                                 </div>
                               <div class="add" data-product-id="${product.id}">
                                 Add to cart
                               </div>
+                              <div class="add-f" data-product-id="${product.id}">
+                                Add to favourites
+                              </div>
                             </div>
                          `;
       document.getElementById("category-items").innerHTML += productCard;
       addToCart()
+      addToFavourites()
       }
     });
     hoverDescription()
@@ -161,6 +181,7 @@ window.addEventListener("load", async () => {
     allBtn.style.backgroundColor = "#d9d9d9";
     creamBtn.style.backgroundColor = "#d9d9d9";
     brushBtn.style.backgroundColor = "#8D6B94";
+    favoritesBtn.style.backgroundColor = "#d9d9d9";
 
     document.getElementById("category-items").innerHTML = "";
 
@@ -182,16 +203,82 @@ window.addEventListener("load", async () => {
                               <div class="add" data-product-id="${product.id}">
                                 Add to cart
                               </div>
+                              <div class="add-f" data-product-id="${product.id}">
+                                Add to favourites
+                              </div>
                             </div>
                          `;
       document.getElementById("category-items").innerHTML += productCard;
       
       addToCart()
+      addToFavourites()
       }})
 
       hoverDescription()
     
   })
+
+
+  favoritesBtn.addEventListener("click",async()=>{
+    razorsBtn.style.backgroundColor = "#d9d9d9";
+    allBtn.style.backgroundColor = "#d9d9d9";
+    creamBtn.style.backgroundColor = "#d9d9d9";
+    brushBtn.style.backgroundColor = "#d9d9d9";
+    favoritesBtn.style.backgroundColor = "#8D6B94";
+
+    document.getElementById("category-items").innerHTML = "";
+
+
+    const favres = await fetch(`http://127.0.0.1:8000/api/getFavoritesByUserId/${user.id}`,{
+
+        method: 'GET',
+          
+        })
+        const fav_products = await favres.json()
+        
+        fav_products.forEach((product) =>{
+          const productCard = `
+                          <div class="item-card">
+                              <div>
+                                <h3 class="product-name">${product.name}</h3>
+                                  <p>$<span>${product.price}</span></p>
+                                  </div>
+                                  <div class =card-img><img src="${product.image}" alt="${product.name}"></div>
+                                  <div class="product-description">
+                                    ${product.description}
+                                </div>
+                              <div class="add" data-product-id="${product.id}">
+                                Add to cart
+                              </div>
+                              <div class="remove-f" data-product-id="${product.id}">
+                                Remove
+                              </div>
+                            </div>
+                         `;
+      document.getElementById("category-items").innerHTML += productCard;
+      addToCart()
+
+        })
+    
+        const removeFavoritesButtons = document.querySelectorAll(".remove-f");
+        removeFavoritesButtons.forEach((button) => {
+          button.addEventListener("click",async () => {
+
+            const product_id = button.dataset.productId;
+
+            const deleteres = await fetch(`http://127.0.0.1:8000/api/removeFavorite/${user.id}/${product_id}`,{
+
+            method: 'DELETE',
+              
+            })
+            const deleteMessage = await deleteres.json()
+            console.log(deleteMessage)
+            favoritesBtn.click();
+          });
+        });
+  })
+
+  
 
   //
 
@@ -285,6 +372,32 @@ window.addEventListener("load", async () => {
   
       });
     });
+  }
+
+  function addToFavourites(){
+    const addtofavoritesbuttons = document.querySelectorAll(".add-f");
+    addtofavoritesbuttons.forEach((button)=>{
+
+      button.addEventListener("click",async()=>{
+
+        const product_id = button.dataset.productId;
+
+        button.innerText = "Added to Favourites"
+        button.style.backgroundColor = "#8D6B94"
+        button.style.cursor = "auto"
+
+        const favres = await fetch(`http://127.0.0.1:8000/api/addFavorite/${user.id}/${product_id}`,{
+
+        method: 'GET',
+          
+        })
+
+
+
+      })
+    })
+
+
   }
 });
 

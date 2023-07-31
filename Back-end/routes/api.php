@@ -2,7 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\FavoriteController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CartItemController;
@@ -17,6 +17,9 @@ Route::controller(AuthController::class)->group(function () {
     Route::post('refresh', 'refresh');
 });
 
+Route::get('/getFavoritesByUserId/{user_id}', [FavoriteController::class, 'getFavoritesByUserId']);
+Route::get('/addFavorite/{user_id}/{product_id}', [FavoriteController::class, 'addFavorite']);
+Route::delete('/removeFavorite/{user_id}/{product_id}', [FavoriteController::class, 'removeFavorite']);
 
 Route::post('/add-cart/{user_id}', [CartController::class, 'addCart']);
 Route::get('/get-cart-id/{user_id}', [CartController::class, 'getCartId']);
@@ -33,6 +36,10 @@ Route::get('/getallproducts-cat', [ProductController::class, 'allProductsWithCat
 Route::delete('/deleteproduct/{product_id}', [ProductController::class, 'deleteProduct']);
 Route::post('/addProduct', [ProductController::class, 'addProduct']);
 Route::post('/updateProduct/{product_id}', [ProductController::class, 'updateProduct']);
+
+
+
+
 
 
 

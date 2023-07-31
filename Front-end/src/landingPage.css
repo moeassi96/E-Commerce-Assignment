@@ -198,6 +198,32 @@ height: 10%;
     background-color: #8D6B94;
 }
 
+.add-f{
+    padding: 5px 30px;
+    font-size: 24px;
+    font-weight: 300;
+    color: #ffffff;
+    background-color: #94A187;
+    border-radius: 10px;
+    cursor: pointer;
+    height: 10%;
+}
+
+.remove-f{
+    padding: 5px 30px;
+    font-size: 24px;
+    font-weight: 300;
+    color: #ffffff;
+    background-color: #de613b;
+    border-radius: 10px;
+    cursor: pointer;
+    height: 10%;
+}
+
+.add-f:hover{
+    background-color: #8D6B94;
+}
+
 .footer{
     margin-top: 100px;
     height: 250px;
@@ -210,6 +236,19 @@ height: 10%;
 }
 
 #all-cat{
+    background-color: #8D6B94;
+}
+
+.favorites{
+    padding: 15px 50px;
+    border-radius: 10px;
+    background-color: #d9d9d9;
+    font-size: 24px;
+    font-weight: 400;
+    color: #ffffff;
+    cursor: pointer;
+}
+.favorites:hover{
     background-color: #8D6B94;
 }
 

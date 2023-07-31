@@ -146,12 +146,7 @@ window.addEventListener("load",async()=>{
     const descriptionInput = document.getElementById("editDescriptionInput");
     const categoryInput = document.getElementById("editCategoryInput");
 
-    
-    // console.log("Image:", fileInput);
-    // console.log("Name:", nameInput.value);
-    // console.log("Price:", priceInput.value);
-    // console.log("Description:", descriptionInput.value);
-    // console.log("Category:", categoryInput.value);
+;
 
     if(fileInput){
     let base64String;
@@ -215,8 +210,12 @@ window.addEventListener("load",async()=>{
 
 
 
+ const closeModal = document.getElementById("closeModalBtn")
 
 
+closeModal.addEventListener("click",()=>{
+  document.getElementById("myModal").style.display = "none";
+})
 
 
 

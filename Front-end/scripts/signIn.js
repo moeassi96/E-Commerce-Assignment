@@ -70,6 +70,7 @@ window.addEventListener("load",()=>{
 
 
 
+    
     const signUp_btn = document.getElementById("signUp-btn")
 
     signUp_btn.addEventListener("click",()=>{
@@ -80,4 +81,4 @@ window.addEventListener("load",()=>{
 
 
 
-})
+}) 

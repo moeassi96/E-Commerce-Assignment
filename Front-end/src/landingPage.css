@@ -164,6 +164,8 @@ padding-bottom: 20px;
     display: none;
     opacity: 90%;
     z-index: 1;
+    overflow-wrap: break-word;
+    width: 200px;
     
   }
 

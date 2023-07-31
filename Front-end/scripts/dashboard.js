@@ -21,7 +21,7 @@ window.addEventListener("load",async()=>{
                             <div><p class="item-description">${product.description}</p></div>
                             <div class="item-category">${product.category_name}</div>
                             <div class="flex flex-col gap-10 items-center">
-                                <div data-product-id="${product.id} id="edit-btn" class="edit-btn">Edit</div>
+                                <div data-product-id="${product.id}" id="edit-btn" class="edit-btn">Edit</div>
                                 <div data-product-id="${product.id}" id="remove-btn" class="remove-btn">Remove</div>
                             </div>
                         </div>
@@ -65,6 +65,7 @@ window.addEventListener("load",async()=>{
     const price_input = document.getElementById("price-input")
     const description_input = document.getElementById("description-input")
     const category_input = document.getElementById('category-select');
+    
     let base64String;
     const fileReader = new FileReader();
 
@@ -102,7 +103,7 @@ window.addEventListener("load",async()=>{
   })
 
 
-
+  let currentProductID;
 
   const editBtns = document.querySelectorAll('.edit-btn')
   
@@ -116,13 +117,101 @@ window.addEventListener("load",async()=>{
 
         const productMessage = await getinfores.json();
 
-      console.log(productMessage)
-
+        const file_input = document.getElementById('editImageInput').files[0];
+        const nameInput = document.getElementById("editNameInput");
+        const priceInput = document.getElementById("editPriceInput");
+        const descriptionInput = document.getElementById("editDescriptionInput");
+        const categoryInput = document.getElementById("editCategoryInput");
+        
+        nameInput.value = productMessage.name;
+        priceInput.value = productMessage.price;
+        descriptionInput.value = productMessage.description;
+        categoryInput.value = productMessage.category_name;
+        document.getElementById("previous-image").innerHTML = `<img style="height: inherit;" src="${productMessage.image}" alt="">`;
+        
+        
       document.getElementById("myModal").style.display = "block"
-
+      console.log(product_id)
+      currentProductID = product_id;
 
     })
   })
+
+
+  const confirmBtn = document.getElementById("editConfirmBtn");
+  confirmBtn.addEventListener("click", async () => {
+    const fileInput = document.getElementById('editImageInput').files[0];
+    const nameInput = document.getElementById("editNameInput");
+    const priceInput = document.getElementById("editPriceInput");
+    const descriptionInput = document.getElementById("editDescriptionInput");
+    const categoryInput = document.getElementById("editCategoryInput");
+
+    
+    // console.log("Image:", fileInput);
+    // console.log("Name:", nameInput.value);
+    // console.log("Price:", priceInput.value);
+    // console.log("Description:", descriptionInput.value);
+    // console.log("Category:", categoryInput.value);
+
+    if(fileInput){
+    let base64String;
+    const fileReader = new FileReader();
+
+      fileReader.onload = async function(event) {
+        base64String = event.target.result;
+        
+
+        const updateData = {
+          name: nameInput.value,
+          price: priceInput.value,
+          description: descriptionInput.value,
+          category_name: categoryInput.value,
+          image:base64String
+        };
+
+        const updateresponse = await fetch(`http://127.0.0.1:8000/api/updateProduct/${currentProductID}`, {
+        method: 'POST', // Change the method to POST
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(updateData),
+        });
+
+        const message = await updateresponse.json();
+        
+        window.location.href = "dashboard.html"
+
+
+    };
+
+    fileReader.readAsDataURL(fileInput);
+  }else{
+    const updateData = {
+      name: nameInput.value,
+      price: priceInput.value,
+      description: descriptionInput.value,
+      category_name: categoryInput.value,
+    };
+
+    const updateresponse = await fetch(`http://127.0.0.1:8000/api/updateProduct/${currentProductID}`, {
+    method: 'POST', 
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(updateData),
+    });
+
+    const message = await updateresponse.json();
+    
+    window.location.href = "dashboard.html"
+    
+  }
+
+    
+
+    
+    document.getElementById("myModal").style.display = "none";
+  });
 
 
 

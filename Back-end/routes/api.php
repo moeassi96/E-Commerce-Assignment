@@ -27,12 +27,12 @@ Route::get('/cart-items/{cart_id}', [CartItemController::class, 'getCartItems'])
 Route::delete('/delete-cart-item/{cart_id}/{product_id}', [CartItemController::class, 'deleteCartItem']);
 Route::delete('/reset-cart-items/{cart_id}', [CartItemController::class, 'deleteMyCartItems']);
 
-
+Route::get('/getProductDetails/{product_id}', [ProductController::class, 'getProductDetails']);
 Route::get('/getallproducts', [ProductController::class, 'allProducts']);
 Route::get('/getallproducts-cat', [ProductController::class, 'allProductsWithCategory']);
 Route::delete('/deleteproduct/{product_id}', [ProductController::class, 'deleteProduct']);
 Route::post('/addProduct', [ProductController::class, 'addProduct']);
-
+Route::post('/updateProduct/{product_id}', [ProductController::class, 'updateProduct']);
 
 
 

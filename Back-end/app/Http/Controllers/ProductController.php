@@ -26,6 +26,18 @@ class ProductController extends Controller
         return response()->json($productsWithCategory);
     }
 
+
+    function getProductDetails($product_id){
+        $product = Product::select('products.*', 'categories.name as category_name')
+        ->Join('categories', 'products.category_id', '=', 'categories.id')
+        ->where('products.id', $product_id)
+        ->first();
+
+        if ($product) {
+            return response()->json($product);
+
+    }}
+
     function deleteProduct($product_id){
         try {
             
@@ -66,5 +78,42 @@ class ProductController extends Controller
             return response()->json(['message' => 'Failed to add product']);
         }
 
+    }
+
+
+    function updateProduct(Request $request, $product_id) {
+        try {
+            $product = Product::find($product_id);
+    
+            if ($request->has('name')) {
+                $product->name = $request->input('name');
+            }
+    
+            if ($request->has('price')) {
+                $product->price = $request->input('price');
+            }
+    
+            if ($request->has('description')) {
+                $product->description = $request->input('description');
+            }
+    
+            if ($request->has('category_name')) {
+                $categoryName = $request->input('category_name');
+                $categoryId = DB::table('categories')
+                    ->where('name', $categoryName)
+                    ->value('id');
+                $product->category_id = $categoryId;
+            }
+    
+            if ($request->has('image')) {
+                $product->image = $request->input('image');
+            }
+    
+            $product->save();
+    
+            return response()->json(['message' => 'Product updated successfully']);
+        } catch (Exception $e) {
+            return response()->json(['error' => $e]);
+        }
     }
 }

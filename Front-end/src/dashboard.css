@@ -1,174 +1,143 @@
-
-
-.dashboard-container{
-    background-color: #94A187;
-    padding: 50px 0px;
+.dashboard-container {
+  background-color: #94a187;
+  padding: 50px 0px;
 }
 
-.dashboard-title{
-    padding: 15px ;
-    font-size: 24px;
-    font-weight: 
-    400;
-    color: #ffffff;
-    background-color: #94A187;
-    border-radius: 10px;
-    width: 60%;
-    text-align: center;
+.dashboard-title {
+  padding: 15px;
+  font-size: 24px;
+  font-weight: 400;
+  color: #ffffff;
+  background-color: #94a187;
+  border-radius: 10px;
+  width: 60%;
+  text-align: center;
 }
 
-.dashboard-table{
-    width: 80%;
+.dashboard-table {
+  width: 80%;
 }
 
-.table-titles{
-    padding: 20px 0px;
-    font-size: 16px;
-    font-weight: 500;
-    border-bottom: 1px solid;
+.table-titles {
+  padding: 20px 0px;
+  font-size: 16px;
+  font-weight: 500;
+  border-bottom: 1px solid;
 }
 
 .table-titles > div {
-    width: 16.66% ;
-    text-align: center;
+  width: 16.66%;
+  text-align: center;
 }
 
-.Picture{
-
+.product {
+  width: 100%;
+  border-bottom: 1px solid;
+  padding: 20px 0px;
+}
+.product > div {
+  width: 16.666%;
+  text-align: center;
 }
 
-.Name{
-
+.item-description {
+  word-wrap: break-word;
 }
 
-.Price{
-
+.item-img > img {
+  height: 50px;
 }
 
-.Description{
-    
+.edit-btn {
+  width: 80px;
+  padding: 5px 10px;
+  background-color: white;
+  border-radius: 5px;
+
+  cursor: pointer;
+}
+.remove-btn {
+  width: 80px;
+  padding: 5px 10px;
+  background-color: rgb(243, 56, 56);
+  border-radius: 5px;
+
+  cursor: pointer;
 }
 
-.Category{
-
+.new-item > div {
+  width: 16.666%;
+  text-align: center;
+  padding: 20px 0px;
 }
 
-.my-products{
+.name-input,
+.price-input {
+  width: 60%;
+  font-size: 16px;
+  border-radius: 5px;
 
+  padding: 5px 10px;
 }
 
-.product{
-    width: 100%;
-    border-bottom: 1px solid;
-    padding: 20px 0px;
-}
-.product > div{
-    width: 16.666%;
-    text-align: center;
+.description-input {
+  width: 100%;
+  font-size: 16px;
+  border-radius: 5px;
+  padding: 5px 10px;
 }
 
-.item-description{
-    word-wrap: break-word;
+.add-btn {
+  padding: 10px 30px;
+  background-color: #50c05c;
+  border-radius: 5px;
+  cursor: pointer;
 }
-
-.item-img >img {
-    height: 50px;
+.image-input {
+  width: -webkit-fill-available;
 }
-
-.edit-btn{
-    width: 80px;
-    padding: 5px 10px;
-    background-color: white;
-    border-radius: 5px;
-
-    cursor: pointer;
-}
-.remove-btn{
-    width: 80px;
-    padding: 5px 10px;
-    background-color: rgb(243, 56, 56);
-    border-radius: 5px;
-
-    cursor: pointer;
-}
-
-
-.new-item >div{
-    width: 16.666%;
-    text-align: center;
-    padding: 20px 0px;
-}
-
-.name-input,.price-input{
-    width: 60%;
-    font-size: 16px;
-    border-radius: 5px;
-    
-    padding: 5px 10px;
-}
-
-.description-input{
-    width: 100%;
-    font-size: 16px;
-    border-radius: 5px;
-    padding: 5px 10px;
-}
-
-.add-btn{
-    padding: 10px 30px;
-    background-color: #50c05c;
-    border-radius: 5px;
-    cursor: pointer;
-}
-.image-input{
-    
-    width: -webkit-fill-available;
-}
-
-
 
 .modal {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
 .modal-body {
-    background-color: #fff;
-    max-width: 400px;
-    margin: 100px auto;
-    padding: 20px;
-    border-radius: 5px;
+  background-color: #fff;
+  max-width: 400px;
+  margin: 100px auto;
+  padding: 20px;
+  border-radius: 5px;
 }
 
 .close-btn {
-    font-size: 25px;
-    cursor: pointer;
+  font-size: 25px;
+  cursor: pointer;
 }
-
 
 input,
 textarea,
 select {
-    padding: 5px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 3px;
+  padding: 5px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
 }
 
 button {
-    padding: 10px 15px;
-    background-color: #94A187;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+  padding: 10px 15px;
+  background-color: #94a187;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
 button:hover {
-    background-color: #8D6B94;
+  background-color: #8d6b94;
 }

@@ -1,130 +1,129 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../src/utility.css">
-    <link rel="stylesheet" href="../src/navbar.css">
-    <link rel="stylesheet" href="../src/landingPage.css">
-    <link rel="stylesheet" href="../src/dashboard.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Redressed&display=swap" rel="stylesheet">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../src/utility.css" />
+    <link rel="stylesheet" href="../src/navbar.css" />
+    <link rel="stylesheet" href="../src/landingPage.css" />
+    <link rel="stylesheet" href="../src/dashboard.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Redressed&display=swap"
+      rel="stylesheet"
+    />
     <title>Dashboard</title>
-</head>
-<body>
+  </head>
+  <body>
     <div class="navbar flex">
-        <div class="navbar-header flex items-center">
-            <img src="../assets/images/logo.png" alt="">
-        </div>
-        <div class="navbar-header-list flex items-center justify-center gap-60">
-            <a class="fw-700 fs-16" href="">Products</a>
-            <a class="fw-700 fs-16" href="">About</a>
-            <a id="signIn-btn" class="signIn-btn fw-700 fs-16">Sign In</a>
-            <a id="signOut-btn" class="signOut-btn fw-700 fs-16">Sign Out</a>
-        </div>
-        <div class="navbar-cart flex items-center justify-center">
-            
-        </div>
+      <div class="navbar-header flex items-center">
+        <img src="../assets/images/logo.png" alt="Logo" />
+      </div>
+      <div class="navbar-header-list flex items-center justify-center gap-60">
+        <a class="fw-700 fs-16" href="">Products</a>
+        <a class="fw-700 fs-16" href="">About</a>
+        <a id="signIn-btn" class="signIn-btn fw-700 fs-16">Sign In</a>
+        <a id="signOut-btn" class="signOut-btn fw-700 fs-16">Sign Out</a>
+      </div>
+      <div class="navbar-cart flex items-center justify-center"></div>
     </div>
     <div class="dashboard-container flex flex-col items-center">
-        <div class="dashboard-title">
-            Dashboard
+      <div class="dashboard-title">Dashboard</div>
+
+      <div class="dashboard-table flex flex-col mt-20">
+        <div class="table-titles flex items-center">
+          <div class="Picture">Picture</div>
+          <div class="Name">Name</div>
+          <div class="Price">Price</div>
+          <div class="Description">Description</div>
+          <div class="Category">Category</div>
+          <div></div>
         </div>
+        <div id="my-products" class="my-products flex flex-col"></div>
 
-        <div class="dashboard-table flex flex-col mt-20">
-            <div class="table-titles flex items-center">
-                <div class="Picture">
-                    Picture
-                </div>
-                <div class="Name">
-                    Name
-                </div>
-                <div class="Price">
-                    Price
-                </div>
-                <div class="Description">
-                    Description
-                </div>
-                <div class="Category">
-                    Category
-                </div>
-                <div>
-
-                </div>
-            </div>
-            <div id="my-products" class="my-products flex flex-col">
-                
-                
-            </div>
-
-            <div class="new-item flex">
-                <div><input class="image-input" id="img-input" type="file" id="imageInput" name="image" accept="image/*"></div>
-                <div><input id="name-input" class="name-input" type="text"></div>
-                <div><input id="price-input" class="price-input" type="text"></div>
-                <div><input id="description-input" class="description-input" type="text"></div>
-                <div><form>
-                    <label for="categoryselect">Category:</label>
-                    <select id="category-select" name="cat">
-                        <option value="razor">razor</option>
-                        <option value="cream">cream</option>
-                        <option value="brush">brush</option>
-                    </select>
-                </form></div>
-                <div class="flex justify-center items-center">
-                    <div id="add-btn" class="add-btn">Add</div>
-                </div>
-                
-            </div>
-
+        <div class="new-item flex">
+          <div>
+            <input
+              class="image-input"
+              id="img-input"
+              type="file"
+              id="imageInput"
+              name="image"
+              accept="image/*"
+            />
+          </div>
+          <div><input id="name-input" class="name-input" type="text" /></div>
+          <div><input id="price-input" class="price-input" type="text" /></div>
+          <div>
+            <input
+              id="description-input"
+              class="description-input"
+              type="text"
+            />
+          </div>
+          <div>
+            <form>
+              <label for="categoryselect">Category:</label>
+              <select id="category-select" name="cat">
+                <option value="razor">razor</option>
+                <option value="cream">cream</option>
+                <option value="brush">brush</option>
+              </select>
+            </form>
+          </div>
+          <div class="flex justify-center items-center">
+            <div id="add-btn" class="add-btn">Add</div>
+          </div>
         </div>
+      </div>
     </div>
 
     <div class="modal" id="myModal">
-        <div class="modal-body">
-            <span class="close-btn" id="closeModalBtn">&times;</span>
-            <h2>Edit</h2>
-            <div class="edit-inputs flex flex-col mt-10">
-                <div id="previous-image" style="height: 50px; width: 50px;"></div>
-                <label for="editImageInput">Image</label>
-                <input type="file" id="editImageInput" accept="image/*">
-                <label for="editNameInput">Name</label>
-                <input type="text" id="editNameInput" required>
-                <label for="editPriceInput">Price</label>
-                <input type="text" id="editPriceInput" required>
-                <label for="editDescriptionInput">Description</label>
-                <textarea id="editDescriptionInput" required></textarea>
-                <label for="editCategoryInput">Category</label>
-                <select id="editCategoryInput">
-                    <option value="razor">razor</option>
-                    <option value="cream">cream</option>
-                    <option value="brush">brush</option>
-                </select>
-            </div>
-            <button id="editConfirmBtn">Confirm</button>
+      <div class="modal-body">
+        <span class="close-btn" id="closeModalBtn">&times;</span>
+        <h2>Edit</h2>
+        <div class="edit-inputs flex flex-col mt-10">
+          <div id="previous-image" style="height: 50px; width: 50px"></div>
+          <label for="editImageInput">Image</label>
+          <input type="file" id="editImageInput" accept="image/*" />
+          <label for="editNameInput">Name</label>
+          <input type="text" id="editNameInput" required />
+          <label for="editPriceInput">Price</label>
+          <input type="text" id="editPriceInput" required />
+          <label for="editDescriptionInput">Description</label>
+          <textarea id="editDescriptionInput" required></textarea>
+          <label for="editCategoryInput">Category</label>
+          <select id="editCategoryInput">
+            <option value="razor">razor</option>
+            <option value="cream">cream</option>
+            <option value="brush">brush</option>
+          </select>
         </div>
+        <button id="editConfirmBtn">Confirm</button>
+      </div>
     </div>
-    
 
-    <div style="margin-top: 0px;" class="footer flex items-center">
-        <div class="footer-logo flex items-center justify-center">
-            <img src="../assets/images/logo big.png" alt="">
-        </div>
-        <div class="footer-list flex flex-col items-center justify-center gap-20">
-            <a href="">Info</a>
-            <a href="">Contact Us</a>
-            <a href="">About Us</a>
-            <a href="">Key Features</a>
-        </div>
-        <div class="footer-list flex flex-col items-center justify-center gap-20">
-            <a href="">Razors</a>
-            <a href="">Shaving Cream</a>
-            <a href="">Shaving Brush</a>
-            
-        </div>
-
+    <div style="margin-top: 0px" class="footer flex items-center">
+      <div class="footer-logo flex items-center justify-center">
+        <img src="../assets/images/logo big.png" alt="Logo" />
+      </div>
+      <div class="footer-list flex flex-col items-center justify-center gap-20">
+        <a href="">Info</a>
+        <a href="">Contact Us</a>
+        <a href="">About Us</a>
+        <a href="">Key Features</a>
+      </div>
+      <div class="footer-list flex flex-col items-center justify-center gap-20">
+        <a href="">Razors</a>
+        <a href="">Shaving Cream</a>
+        <a href="">Shaving Brush</a>
+      </div>
     </div>
     <script src="../scripts/dashboard.js"></script>
-</body>
+  </body>
 </html>

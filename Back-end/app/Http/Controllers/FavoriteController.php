@@ -30,7 +30,7 @@ class FavoriteController extends Controller
             ->whereIn('id', $productIds)
             ->get();
 
-        // Return the favorite products as a JSON response
+     
         return response()->json($favoriteProducts);
     }
 

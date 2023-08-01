@@ -13,7 +13,7 @@ class CartItemController extends Controller
     function addItemToCart(Request $request)
     {
         try {
-            // Assuming this code is inside a controller method that receives a $request object
+            
             $cartItem = CartItem::create([
                 'product_id' => $request->product_id,
                 'cart_id' => $request->cart_id,
@@ -24,7 +24,7 @@ class CartItemController extends Controller
                 'cart_item' => $cartItem,
             ]);
         } catch (QueryException $error) {
-            // Handle the QueryException here
+            
             return response()->json([
                 'message' => 'Error adding item to cart.',
                 'error' => $error->getMessage(), 

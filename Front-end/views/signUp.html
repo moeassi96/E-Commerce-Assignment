@@ -1,78 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../src/utility.css">
-    <link rel="stylesheet" href="../src/navbar.css">
-    <link rel="stylesheet" href="../src/signIn.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../src/utility.css" />
+    <link rel="stylesheet" href="../src/navbar.css" />
+    <link rel="stylesheet" href="../src/signIn.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
     <title>Sign up</title>
-</head>
-<body>
+  </head>
+  <body>
     <div class="navbar flex">
-        <div class="navbar-header flex items-center">
-            <img src="../assets/images/logo.png" alt="">
-        </div>
-        <div class="navbar-header-list flex items-center justify-center gap-60">
-            <a class="fw-700 fs-16" href="">Products</a>
-            <a class="fw-700 fs-16" href="">About</a>
-            <a id="signIn-btn" class="fw-700 fs-16" href="../signIn.html">Sign In</a>
-        </div>
-        <div class="navbar-cart flex items-center">
-        </div>
+      <div class="navbar-header flex items-center">
+        <img src="../assets/images/logo.png" alt="" />
+      </div>
+      <div class="navbar-header-list flex items-center justify-center gap-60">
+        <a class="fw-700 fs-16" href="">Products</a>
+        <a class="fw-700 fs-16" href="">About</a>
+        <a id="signIn-btn" class="fw-700 fs-16" href="../signIn.html"
+          >Sign In</a
+        >
+      </div>
+      <div class="navbar-cart flex items-center"></div>
     </div>
     <div class="main-section flex justify-center items-center">
-        <div class="sign-up-form flex flex-col gap-10 items-center">
-            <img src="../assets/images/logo-icon.png" alt="">
-            <h1 class="fs-48 fw-500">Sign up</h1>
-            <h3 class="fs-24 fw-400">Welcome!</h3>
-            <div class="input-container flex flex-col">
-                <input id="username" class="fs-16" type="text">
-                <div class="flex justify-between">
-                    <p class="input-name">Username</p>
-                    
-                </div>
-                <input id="email" class="fs-16" type="text">
-                <div class="flex justify-between">
-                    <p class="input-name">Email address</p>
-                    
-                </div>
-                <input id="password" class="fs-16" type="password">
-                <div class="flex justify-between">
-                    <p class="input-name">Password</p>
-                    <p class="password-error" id="password-error"></p>
-                </div>
-            </div>
-            
-            <p class="mt-50">Already a member? <a id="signIn-btn" href="../signIn.html"><span class="fs-24 fw-700">Sign In</span></a> </p>
-
-            <div id="signUp_btn" class="circular-btn flex justify-center items-center"><img src="../assets/images/Arrow.png" alt=""></div>
-
+      <div class="sign-up-form flex flex-col gap-10 items-center">
+        <img src="../assets/images/logo-icon.png" alt="" />
+        <h1 class="fs-48 fw-500">Sign up</h1>
+        <h3 class="fs-24 fw-400">Welcome!</h3>
+        <div class="input-container flex flex-col">
+          <input id="username" class="fs-16" type="text" />
+          <div class="flex justify-between">
+            <p class="input-name">Username</p>
+          </div>
+          <input id="email" class="fs-16" type="text" />
+          <div class="flex justify-between">
+            <p class="input-name">Email address</p>
+          </div>
+          <input id="password" class="fs-16" type="password" />
+          <div class="flex justify-between">
+            <p class="input-name">Password</p>
+            <p class="password-error" id="password-error"></p>
+          </div>
         </div>
+
+        <p class="mt-50">
+          Already a member?
+          <a id="signIn-btn" href="../signIn.html"
+            ><span class="fs-24 fw-700">Sign In</span></a
+          >
+        </p>
+
+        <div
+          id="signUp_btn"
+          class="circular-btn flex justify-center items-center"
+        >
+          <img src="../assets/images/Arrow.png" alt="" />
+        </div>
+      </div>
     </div>
     <div class="footer flex items-center">
-        <div class="footer-logo flex items-center justify-center">
-            <img src="../assets/images/logo big.png" alt="">
-        </div>
-        <div class="footer-list flex flex-col items-center justify-center gap-20">
-            <a href="">Info</a>
-            <a href="">Contact Us</a>
-            <a href="">About Us</a>
-            <a href="">Key Features</a>
-        </div>
-        <div class="footer-list flex flex-col items-center justify-center gap-20">
-            <a href="">Razors</a>
-            <a href="">Shaving Cream</a>
-            <a href="">Shaving Brush</a>
-            
-        </div>
-
+      <div class="footer-logo flex items-center justify-center">
+        <img src="../assets/images/logo big.png" alt="" />
+      </div>
+      <div class="footer-list flex flex-col items-center justify-center gap-20">
+        <a href="">Info</a>
+        <a href="">Contact Us</a>
+        <a href="">About Us</a>
+        <a href="">Key Features</a>
+      </div>
+      <div class="footer-list flex flex-col items-center justify-center gap-20">
+        <a href="">Razors</a>
+        <a href="">Shaving Cream</a>
+        <a href="">Shaving Brush</a>
+      </div>
     </div>
 
-<script src="../scripts/signUp.js"></script>
-</body>
-
+    <script src="../scripts/signUp.js"></script>
+  </body>
 </html>

@@ -1,81 +1,77 @@
-
-input{
-    margin-top: 30px;
-    width: 100%;
-    outline: 0;
-    border-width: 0 0 2px;
-    background-color: #d9d9d9;
-    border-color: rgb(166, 168, 168);
-  
+input {
+  margin-top: 30px;
+  width: 100%;
+  outline: 0;
+  border-width: 0 0 2px;
+  background-color: #d9d9d9;
+  border-color: rgb(166, 168, 168);
 }
-.main-section{
-    height:100vh;
-    background-image: url("../assets/images/wooden.jpg") ;
-    background-size: inherit;
+.main-section {
+  height: 100vh;
+  background-image: url("../assets/images/wooden.jpg");
+  background-size: inherit;
 }
 
-.sign-in-form{
-    width: 50%;
-    height: 60%;
-    background-color: #d9d9d9;
-    opacity: 95%;
-    padding: 20px;
-    position: relative;
-    min-height: 550px;
+.sign-in-form {
+  width: 50%;
+  height: 60%;
+  background-color: #d9d9d9;
+  opacity: 95%;
+  padding: 20px;
+  position: relative;
+  min-height: 550px;
 }
-.input-container{
-    width: 50%;
-}
-
-.password-error{
-    color: rgb(215, 93, 93);
-    display: none;
-    
+.input-container {
+  width: 50%;
 }
 
-.input-name{
-    opacity: 50%;
+.password-error {
+  color: rgb(215, 93, 93);
+  display: none;
 }
 
-.forgot-btn{
-    padding: 12.5px 25px;
-    background-color: #94A187;
-    cursor: pointer;
+.input-name {
+  opacity: 50%;
 }
 
-.signUp-btn{
-    cursor: pointer;
+.forgot-btn {
+  padding: 12.5px 25px;
+  background-color: #94a187;
+  cursor: pointer;
 }
-.circular-btn{
+
+.signUp-btn {
+  cursor: pointer;
+}
+.circular-btn {
   position: absolute;
   bottom: 15%;
   right: 5%;
   width: 75px;
   height: 75px;
-  background-color: #94A187;
+  background-color: #94a187;
   border-radius: 50%;
   cursor: pointer;
 }
 
-.circular-btn >img{
-    width: 30px;
+.circular-btn > img {
+  width: 30px;
 }
 
-.footer{
-    height: 250px;
-    background-color: #d9d9d9;
+.footer {
+  height: 250px;
+  background-color: #d9d9d9;
 }
 
 .footer > div {
-    width: 33.33%;
-    height: 100%;
+  width: 33.33%;
+  height: 100%;
 }
-.sign-up-form{
-    width: 50%;
-    height: 60%;
-    background-color: #d9d9d9;
-    opacity: 95%;
-    padding: 20px;
-    position: relative;
+.sign-up-form {
+  width: 50%;
+  height: 60%;
+  background-color: #d9d9d9;
+  opacity: 95%;
+  padding: 20px;
+  position: relative;
 }
-

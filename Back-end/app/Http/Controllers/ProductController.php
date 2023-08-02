@@ -18,11 +18,10 @@ class ProductController extends Controller
 
     function allProductsWithCategory()
     {
-        $productsWithCategory = DB::table('products')
-            ->join('categories', 'products.category_id', '=', 'categories.id')
+        $productsWithCategory =Product::join('categories', 'products.category_id', '=', 'categories.id')
             ->select('products.*', 'categories.name AS category_name')
             ->get();
-
+            
         return response()->json($productsWithCategory);
     }
 

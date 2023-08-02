@@ -4,11 +4,14 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Cart;
+use Illuminate\Support\Facades\Auth;
 
 class CartController extends Controller
 {
     function addCart($user_id)
     {
+        // $user = Auth::user();
+        // dd($user);
         $cart = Cart::create([
             'user_id' => $user_id,
         ]);
